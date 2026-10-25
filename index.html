@@ -10,6 +10,8 @@
             --panel: #16161A;
             --electric-blue: #00B4FF;
             --neon-green: #00FF80;
+            --neon-purple: #B070FF;
+            --neon-orange: #FF8C00;
             --text-main: #FFFFFF;
             --text-muted: #A0A0A0;
         }
@@ -66,12 +68,13 @@
         .feature-card:hover { border-color: var(--electric-blue); transform: translateY(-5px); }
         .feature-card h3 { color: var(--electric-blue); margin-bottom: 10px; font-size: 1.3rem; }
 
+        /* PRICING GRID FOR 4 CARDS */
         .pricing { padding: 100px 20px; background: #111116; text-align: center; }
         .pricing-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
-            max-width: 800px; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 20px; 
+            max-width: 1100px; 
             margin: 0 auto; 
         }
         
@@ -79,32 +82,50 @@
             background: var(--panel); 
             border: 2px solid var(--electric-blue); 
             border-radius: 16px; 
-            padding: 50px; 
-            box-shadow: 0 0 40px rgba(0,180,255,0.1); 
+            padding: 30px 20px; 
+            box-shadow: 0 0 20px rgba(0,180,255,0.05); 
             display: flex;
             flex-direction: column;
+            transition: 0.3s;
         }
-        .price-card h2 { font-size: 2rem; margin-bottom: 10px; }
-        .price-card .price { font-size: 3.5rem; font-weight: bold; color: var(--electric-blue); margin-bottom: 20px; }
-        .price-card ul { list-style: none; text-align: left; margin-bottom: 30px; color: var(--text-muted); flex-grow: 1; }
-        .price-card li { margin-bottom: 15px; }
+        .price-card:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,180,255,0.2); }
+        .price-card h2 { font-size: 1.4rem; margin-bottom: 10px; }
+        .price-card .price { font-size: 2.8rem; font-weight: bold; color: var(--electric-blue); margin-bottom: 20px; }
+        .price-card ul { list-style: none; text-align: left; margin-bottom: 30px; color: var(--text-muted); flex-grow: 1; font-size: 0.9rem; }
+        .price-card li { margin-bottom: 12px; }
         .price-card li::before { content: '✓'; color: var(--neon-green); margin-right: 10px; font-weight: bold; }
 
-        .price-card.day-pass { border-color: var(--neon-green); }
-        .price-card.day-pass .price { color: var(--neon-green); }
-        .btn-green {
-            background: var(--neon-green);
-            color: #000;
-            padding: 15px 40px;
-            font-size: 1.2rem;
+        /* COLOR VARIANTS FOR EACH CARD */
+        .price-card.pass-24 { border-color: var(--neon-green); }
+        .price-card.pass-24 .price { color: var(--neon-green); }
+        
+        .price-card.pass-3 { border-color: var(--electric-blue); }
+        .price-card.pass-3 .price { color: var(--electric-blue); }
+        
+        .price-card.pass-7 { border-color: var(--neon-purple); }
+        .price-card.pass-7 .price { color: var(--neon-purple); }
+        
+        .price-card.lifetime { border-color: var(--neon-orange); box-shadow: 0 0 30px rgba(255,140,0,0.15); }
+        .price-card.lifetime .price { color: var(--neon-orange); }
+
+        /* BUTTONS */
+        .btn-buy {
+            padding: 12px 20px;
+            font-size: 1rem;
             font-weight: bold;
             border-radius: 8px;
             text-decoration: none;
             transition: 0.3s;
-            box-shadow: 0 0 20px rgba(0, 255, 128, 0.4);
             display: block;
+            text-align: center;
         }
-        .btn-green:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(0, 255, 128, 0.8); }
+
+        .btn-green { background: var(--neon-green); color: #000; box-shadow: 0 0 15px rgba(0,255,128,0.3); }
+        .btn-blue { background: var(--electric-blue); color: #000; box-shadow: 0 0 15px rgba(0,180,255,0.3); }
+        .btn-purple { background: var(--neon-purple); color: #000; box-shadow: 0 0 15px rgba(176,112,255,0.3); }
+        .btn-orange { background: var(--neon-orange); color: #000; box-shadow: 0 0 15px rgba(255,140,0,0.3); }
+
+        .btn-buy:hover { transform: translateY(-2px); filter: brightness(1.2); }
 
         .legal { max-width: 800px; margin: 0 auto; padding: 80px 20px; color: var(--text-muted); font-size: 0.9rem; }
         .legal h3 { color: var(--text-main); margin-top: 40px; margin-bottom: 10px; }
@@ -152,32 +173,55 @@
         <h2 class="section-title">Choose Your Plan</h2>
         
         <div class="pricing-grid">
-            <!-- LIFETIME CARD -->
-            <div class="price-card">
-                <h2>Lifetime License</h2>
-                <div class="price">£5.00</div>
-                <ul>
-                    <li>1 PC Activation</li>
-                    <li>Free Lifetime Updates</li>
-                    <li>Advanced NVIDIA Tweaks</li>
-                    <li>Priority Support</li>
-                </ul>
-                <!-- PASTE YOUR LIFETIME CHECKOUT LINK HERE -->
-                <a href="#" class="btn-primary" style="display:block;">Buy Lifetime</a>
-            </div>
-
             <!-- 24 HOUR PASS CARD -->
-            <div class="price-card day-pass">
+            <div class="price-card pass-24">
                 <h2>24-Hour Pass</h2>
                 <div class="price">£1.00</div>
                 <ul>
                     <li>1 PC Activation</li>
-                    <li>Valid for exactly 24 Hours</li>
-                    <li>Perfect for a weekend tournament</li>
+                    <li>Valid for 24 Hours</li>
                     <li>All features unlocked</li>
                 </ul>
-                <!-- PASTE YOUR 24HR LEMON SQUEEZY LINK HERE -->
-                <a href="https://boosteyopti.lemonsqueezy.com/checkout/buy/0e092117-332c-4ac6-af6f-48285928eeeb" class="btn-green">Buy Day Pass</a>
+                <a href="https://boosteyopti.lemonsqueezy.com/checkout/buy/0e092117-332c-4ac6-af6f-48285928eeeb" class="btn-buy btn-green">Buy Day Pass</a>
+            </div>
+
+            <!-- 3 DAY PASS CARD -->
+            <div class="price-card pass-3">
+                <h2>3-Day Pass</h2>
+                <div class="price">£2.00</div>
+                <ul>
+                    <li>1 PC Activation</li>
+                    <li>Valid for 72 Hours</li>
+                    <li>All features unlocked</li>
+                </ul>
+                <!-- PASTE YOUR 3-DAY LEMON SQUEEZY LINK HERE -->
+                <a href="#" class="btn-buy btn-blue">Buy 3-Day Pass</a>
+            </div>
+
+            <!-- 7 DAY PASS CARD -->
+            <div class="price-card pass-7">
+                <h2>7-Day Pass</h2>
+                <div class="price">£3.50</div>
+                <ul>
+                    <li>1 PC Activation</li>
+                    <li>Valid for 1 Week</li>
+                    <li>All features unlocked</li>
+                </ul>
+                <!-- PASTE YOUR 7-DAY LEMON SQUEEZY LINK HERE -->
+                <a href="#" class="btn-buy btn-purple">Buy 7-Day Pass</a>
+            </div>
+
+            <!-- LIFETIME CARD -->
+            <div class="price-card lifetime">
+                <h2>Lifetime</h2>
+                <div class="price">£5.00</div>
+                <ul>
+                    <li>1 PC Activation</li>
+                    <li>Never Expires</li>
+                    <li>Priority Support</li>
+                </ul>
+                <!-- PASTE YOUR LIFETIME LEMON SQUEEZY LINK HERE -->
+                <a href="#" class="btn-buy btn-orange">Buy Lifetime</a>
             </div>
         </div>
     </section>
