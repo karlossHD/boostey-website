@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostey — Premium PC Optimizer</title>
+    <style>
+        :root {
+            --bg: #0F0F13;
+            --panel: #16161A;
+            --electric-blue: #00B4FF;
+            --neon-green: #00FF80;
+            --text-main: #FFFFFF;
+            --text-muted: #A0A0A0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(15, 15, 19, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #222;
+        }
+        nav .logo { font-size: 1.5rem; font-weight: 900; color: var(--electric-blue); letter-spacing: 1px; }
+        nav a { color: var(--text-main); text-decoration: none; margin-left: 20px; font-weight: 600; }
+        nav a:hover { color: var(--electric-blue); }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 180px 20px 100px;
+            background: radial-gradient(circle at 50% 0%, #1a2a40 0%, var(--bg) 70%);
+        }
+        .hero img { width: 180px; margin-bottom: 20px; filter: drop-shadow(0 0 30px rgba(0,180,255,0.3)); }
+        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; background: linear-gradient(90deg, #FFF, var(--electric-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; }
+        .btn-primary {
+            background: var(--electric-blue);
+            color: var(--bg);
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(0, 180, 255, 0.8); }
+
+        /* Features */
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
+        .feature-card { background: var(--panel); padding: 30px; border-radius: 12px; border: 1px solid #222; transition: 0.3s; }
+        .feature-card:hover { border-color: var(--electric-blue); transform: translateY(-5px); }
+        .feature-card h3 { color: var(--electric-blue); margin-bottom: 10px; font-size: 1.3rem; }
+
+        /* Pricing */
+        .pricing { padding: 100px 20px; background: #111116; text-align: center; }
+        .price-card { background: var(--panel); border: 2px solid var(--electric-blue); border-radius: 16px; max-width: 400px; margin: 0 auto; padding: 50px; box-shadow: 0 0 40px rgba(0,180,255,0.1); }
+        .price-card h2 { font-size: 2rem; margin-bottom: 10px; }
+        .price-card .price { font-size: 4rem; font-weight: bold; color: var(--electric-blue); margin-bottom: 20px; }
+        .price-card ul { list-style: none; text-align: left; margin-bottom: 30px; color: var(--text-muted); }
+        .price-card li { margin-bottom: 15px; }
+        .price-card li::before { content: '✓'; color: var(--neon-green); margin-right: 10px; font-weight: bold; }
+
+        /* Legal & Footer */
+        .legal { max-width: 800px; margin: 0 auto; padding: 80px 20px; color: var(--text-muted); font-size: 0.9rem; }
+        .legal h3 { color: var(--text-main); margin-top: 40px; margin-bottom: 10px; }
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; color: #666; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BOOSTEY</div>
+        <div>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#legal">Legal</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="logo.png" alt="Boostey Logo">
+        <h1>Unleash Your PC's True Power.</h1>
+        <p>The ultimate Windows optimizer built for gamers and power users. Clean junk, boost RAM, and apply advanced NVIDIA tweaks in one click.</p>
+        <a href="#pricing" class="btn-primary">Get Boostey Now</a>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature-card">
+            <h3>⚡ 1-Click Boost</h3>
+            <p>Instantly flush standby RAM and clean temporary files to free up resources immediately.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚙️ Advanced OS Tweaks</h3>
+            <p>Disable background apps, turn off Game DVR, and optimize Windows for raw FPS.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🎮 NVIDIA Driver Control</h3>
+            <p>Directly modify your NVIDIA global driver profile for the ultimate gaming experience.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🛡️ Safe & Reversible</h3>
+            <p>Every tweak is timestamped. Click "Restore Defaults" to instantly undo all changes safely.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <div class="price-card">
+            <h2>Lifetime License</h2>
+            <div class="price">£5.00</div>
+            <ul>
+                <li>1 PC Activation</li>
+                <li>Free Lifetime Updates</li>
+                <li>Advanced NVIDIA Tweaks</li>
+                <li>Priority Support</li>
+            </ul>
+            <!-- REPLACE # WITH YOUR LEMON SQUEEZY CHECKOUT LINK -->
+            <a href="#" class="btn-primary" style="display:block;">Buy License</a>
+        </div>
+    </section>
+
+    <section id="legal" class="legal">
+        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 20px;">Terms & Privacy</h2>
+        
+        <h3>1. License Agreement</h3>
+        <p>By purchasing Boostey, you are granted a single-user, non-transferable license. You may activate the software on one (1) PC. Attempting to bypass the licensing system or sharing your key will result in a permanent ban.</p>
+        
+        <h3>2. Refund Policy</h3>
+        <p>Because this is a digital product, we offer a 14-day money-back guarantee if the software does not function as described. Please contact support to request a refund.</p>
+
+        <h3>3. Privacy Policy</h3>
+        <p>Boostey does not collect personal data, track your browsing, or monitor your activity. The only data transmitted is your License Key during activation, which is securely processed by our payment provider (Lemon Squeezy).</p>
+
+        <h3>4. Limitation of Liability</h3>
+        <p>Boostey is provided "as is". While our tweaks are tested and safe, we are not responsible for any system instability caused by third-party software or hardware failure.</p>
+
+        <h3>Contact</h3>
+        <p>For support, please email: <b>support@boostey.com</b> (Replace with your real email before launching).</p>
+    </section>
+
+    <footer>
+        &copy; 2026 Boostey. All rights reserved. Powered by Lemon Squeezy.
+    </footer>
+
+</body>
+</html>
